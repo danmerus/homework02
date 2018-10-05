@@ -13,7 +13,7 @@ class ComplexNumberSpec extends FlatSpec with Matchers {
   "Complex numbers" should "be substracted correctly" in {
     val c1 = ComplexNumber(2, 3)
     val c2 = ComplexNumber(1, 2)
-    c1 - c2 shouldEqual ComplexNumber(1, 1)
+    c1 - c2 shouldEqual ComplexNumber(1, 1  )
   }
 
   "Complex numbers" should "be multiplied correctly" in {
@@ -28,23 +28,18 @@ class ComplexNumberSpec extends FlatSpec with Matchers {
   }
 
   "Complex numbers" should "be compared correctly1" in {
-    val c1 = ComplexNumber(2, 3)
-    val c2 = ComplexNumber(2, 3)
-    c1 == c2 should be (true)
+    var c1 = ComplexNumber(1, 2)
+    var c2 = ComplexNumber(1, 1)
+    var c3 = ComplexNumber(2, 3.00000000001)
+    var c4 = c3 - c2
+    c4 =~= c1 should be (true)
   }
 
   "Complex numbers" should "be compared correctly2" in {
     val c1 = ComplexNumber(2, 3)
     val c2 = ComplexNumber(1, 3)
-    c1 == c2 should be (false)
+    c1 =~= c2 should be (false)
   }
-
-  "Complex numbers" should "be compared  correctly3" in {
-    val c1 = ComplexNumber(2, 3)
-    val c2 = "234"
-    c1 == c2 should be (false)
-  }
-
 
 }
 
