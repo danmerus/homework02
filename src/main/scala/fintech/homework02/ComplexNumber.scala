@@ -20,7 +20,7 @@ class ComplexNumber(val re:Double, val im:Double) {
     new ComplexNumber(n2.re, -1*n2.im)
   }
 
-  def ~(power: Int): ComplexNumber ={
+  def ~(power: Int): ComplexNumber = {
     var res = this
     var count = power
     if (power > 0) {
